@@ -4,4 +4,559 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: none
 ---
-## Hello World
+# Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean-Christophe Dupuy - CISO & Security Consultant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+            min-width: 1200px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 60px 40px;
+            position: relative;
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .header-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .header-text .title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #bfdbfe;
+        }
+
+        .header-text .tagline {
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #e0e7ff;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: #e0e7ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: white;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.2);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .main-content {
+            padding: 60px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3b82f6;
+            display: inline-block;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .experience-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            font-size: 1.1rem;
+            color: #3b82f6;
+            font-weight: 500;
+        }
+
+        .experience-duration {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-weight: 500;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+
+        .experience-achievements {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .experience-achievements li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .experience-achievements li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-size: 0.8rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .skill-category h3 {
+            color: #1e3a8a;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 4px 0;
+            color: #4b5563;
+            font-size: 0.95rem;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .cert-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .cert-item h3 {
+            color: #1e3a8a;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cert-item p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .education-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .education-item h3 {
+            color: #1e3a8a;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: #64748b;
+        }
+
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .language-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .language-item h3 {
+            color: #1e3a8a;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .projects {
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+            margin-top: 20px;
+        }
+
+        .projects h3 {
+            color: #1e3a8a;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .travel-note {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 30px;
+            border: 1px solid #93c5fd;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        .cta-button.secondary {
+            background: #64748b;
+        }
+
+        .cta-button.secondary:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Jean-Christophe Dupuy</h1>
+                    <div class="title">CISO / Senior Security Consultant</div>
+                    <div class="tagline">Data Privacy, Risk Management, AI Security & Regulatory Compliance Expert Transforming Security Posture for Multinational Organizations</div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <a href="mailto:jc@dupuyadvisory.com">jc@dupuyadvisory.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <span>(321) 438-4559</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>💼</span>
+                            <a href="https://www.linkedin.com/in/jean-christophe-dupuy-a936787/" target="_blank">LinkedIn Profile</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>📍</span>
+                            <span>Orlando, FL</span>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="mailto:jc@dupuyadvisory.com" class="cta-button">
+                            📧 Contact Me
+                        </a>
+                        <a href="https://www.linkedin.com/in/jean-christophe-dupuy-a936787/" target="_blank" class="cta-button secondary">
+                            💼 LinkedIn
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="profile-photo-container">
+                    <img src="your-photo.jpg" alt="Jean-Christophe Dupuy" class="profile-photo">
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2>Professional Summary</h2>
+                <div class="summary">
+                    Senior Security Consultant with 20 years directing ISO and NIST anchored programs across SaaS and hospitality enterprises. For the past six years, served as CISO of a new business unit formed from four acquisitions—scaling the security team 8 → 50, integrating Zero-Trust cloud tools (Netskope CASB, Microsoft DLP, Palo Alto IPS), lifting product-maturity scores 30% YoY. Mapped controls to PCI DSS, SOC 2 Type 2, GDPR and NIS2 guidance, turning risk data into board-ready decisions. Lowered cyber-insurance premiums 15%. Combine deep engineering roots with commercial savvy to advise C-suites, steer post-merger security roadmaps, and position cybersecurity as a growth catalyst.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Key Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Group Deputy CISO</div>
+                            <div class="experience-company">Amadeus</div>
+                        </div>
+                        <div class="experience-duration">Jan 2024 - Jun 2025</div>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>Oversaw 6 BISO teams worldwide, unifying governance, consistent security policy implementation and alignment with enterprise architecture</li>
+                        <li>Advised and mentored regional CISOs (RISOs), driving best practices in security maturity, post-merger integration, and regulatory alignment</li>
+                        <li>Launched implementation of Amadeus's AI Security Framework, ensuring compliance with EU AI Act</li>
+                        <li>Launched and managed the DORA Digital Operational Resilience Act compliance program for the payment division</li>
+                        <li>Supported the Group CISO in shaping global security strategy, risk management, and regulatory initiatives</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">CISO</div>
+                            <div class="experience-company">Amadeus Hospitality</div>
+                        </div>
+                        <div class="experience-duration">Jan 2019 - Jun 2025</div>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>Built and led cybersecurity organization for a BU formed from four acquisitions, growing team from 8 to 50 and managing $8M budget</li>
+                        <li>Established security governance around four core pillars: Global Risk Compliance, PMO, Secure Development Lifecycle, and 24/7 SOC</li>
+                        <li>Expanded ISO 27001 certification to 10 product lines and 6 sites (0 major non-conformities)</li>
+                        <li>Renewed PCI DSS certification on 20 products</li>
+                        <li>Completed NIS2 gap-analysis and 18-month remediation plan with 70% of controls closed in year 1</li>
+                        <li>Built crosswalk between ISO 27001 — NIST 800-53 — SOC 2 Type 2 — PCI DSS — GDPR — NIS2</li>
+                        <li>Embedded CISO representatives in weekly architecture reviews, cutting late-stage security rework by 25%</li>
+                        <li>Championed agile Secure-SDLC across all product teams, cutting critical code defects 30% YoY</li>
+                        <li>Achieved 98% IT asset visibility and 100% maturity visibility on customer-facing applications</li>
+                        <li>Reduced incident severity from critical to low impact in 2 years</li>
+                        <li>Renegotiated $10M cyber-insurance renewal, cut premiums 15% by evidencing improved SOC KPIs</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Regional Security Officer, Asia Pacific (APAC)</div>
+                            <div class="experience-company">Amadeus</div>
+                        </div>
+                        <div class="experience-duration">May 2014 - Dec 2018</div>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>First Regional Security Officer for APAC, establishing and leading the region's cybersecurity program</li>
+                        <li>Developed comprehensive cyber program including discovery, on-site security audits, and direct customer engagement</li>
+                        <li>Built standardized processes for risk assessment and incident management tailored to regional needs</li>
+                        <li>Selected to lead and deploy the program across Americas and Europe, ensuring global consistency</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Leadership & Strategy</h3>
+                        <ul class="skill-list">
+                            <li>Cybersecurity Leadership</li>
+                            <li>Risk Management</li>
+                            <li>Stakeholder Engagement</li>
+                            <li>Team Building & Scaling</li>
+                            <li>Executive Communication</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Compliance & Governance</h3>
+                        <ul class="skill-list">
+                            <li>ISO 27001, PCI DSS, SOC 1&2</li>
+                            <li>GDPR, CCPA, NIS2, DORA</li>
+                            <li>EU AI Act</li>
+                            <li>Security Architecture</li>
+                            <li>Secure SDLC (OWASP)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technical Expertise</h3>
+                        <ul class="skill-list">
+                            <li>Cloud Security (Azure, AWS, GCP)</li>
+                            <li>Vulnerability Management</li>
+                            <li>Incident Response</li>
+                            <li>Zero Trust Architecture</li>
+                            <li>IAM & Infrastructure Security</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Certifications</h2>
+                <div class="certifications">
+                    <div class="cert-item">
+                        <h3>CISSP</h3>
+                        <p>Certified Information Systems Security Professional - ISC²</p>
+                    </div>
+                    <div class="cert-item">
+                        <h3>CEH</h3>
+                        <p>Certified Ethical Hacker - Firebrand</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Master of Science in Engineering</h3>
+                    <p>École Nationale des Arts et Métiers (ENSAM), France</p>
+                </div>
+                <div class="education-item">
+                    <h3>Post-Master's Degree in Robotics</h3>
+                    <p>Université Pierre et Marie Curie (Paris 6), France</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Languages</h2>
+                <div class="languages">
+                    <div class="language-item">
+                        <h3>French</h3>
+                        <p>Native</p>
+                    </div>
+                    <div class="language-item">
+                        <h3>English</h3>
+                        <p>Fluent</p>
+                    </div>
+                    <div class="language-item">
+                        <h3>German</h3>
+                        <p>Fluent</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Personal Projects</h2>
+                <div class="projects">
+                    <h3>Home AI Lab (Ongoing)</h3>
+                    <p>Maintain a GPU-powered Kubernetes cluster to prototype open-source LLMs, fine-tune models with LangChain and Hugging Face, and test MLOps pipelines (Docker, GitHub Actions, VMs, NAS).</p>
+                </div>
+            </section>
+
+            <div class="travel-note">
+                ✈️ Willing to travel for the right opportunity
+            </div>
+        </main>
+    </div>
+</body>
+</html>
